@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+
+  }
+
+  .dark {
+
+  }
+}
+
+@layer base {
+  * {
+    /*@apply border-border;*/
+  }
+  body {
+    /*@apply bg-background text-foreground;*/
+  }
+}
+
+/*------------ HERO SECTION & ANIMATIONS STARTS ------------*/
+.headerbg{
+  background: rgba(12, 0, 51, 0.55);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.9px);
+  -webkit-backdrop-filter: blur(50px);
+}
+.ballContainer {
+  position: relative;
+  background-color: #0f0923;
+}
+
+.ball-1 {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 300px;
+  height: 300px;
+  background-color: #fe8c0075;
+  border-radius: 50%;
+  box-shadow: 10px 10px 50px 100px #fe8c0075;
+  animation: moveLeftRight 5s infinite alternate;
+}
+
+.ball-2 {
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  width: 300px;
+  height: 300px;
+  background-color: #6233fe8d;
+  border-radius: 50%;
+  box-shadow: 10px 10px 50px 100px #6233fe8d;
+  animation: moveUpDown 5s infinite alternate;
+}
+
+.ball-3 {
+  position: absolute;
+  top: 14%;
+  left: 14%;
+  width: 300px;
+  height: 300px;
+  background-color: #6233fe8d;
+  border-radius: 50%;
+  box-shadow: 10px 10px 50px 100px #6233fe8d;
+  animation: moveLeftRight 5s infinite alternate;
+}
+
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(20%);
+  }
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(-20%);
+  }
+  100% {
+    transform: translateY(30%);
+  }
+}
+
+
+.SwitchRoot {
+  width: 42px;
+  height: 25px;
+  background-color: #E4E7EC;
+  border-radius: 9999px;
+  position: relative;
+  box-shadow: 0 2px 10px var(--black-a7);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.SwitchRoot:focus {
+  box-shadow: 0 0 0 2px #F56630;
+}
+.SwitchRoot[data-state='checked'] {
+  background-color: #F56630;
+}
+
+.SwitchThumb {
+  display: block;
+  width: 21px;
+  height: 21px;
+  background-color:  #ffffff;
+  border-radius: 9999px;
+  box-shadow: 0 2px 2px  #E4E7EC;
+  transition: transform 100ms;
+  transform: translateX(2px);
+  will-change: transform;
+}
+.SwitchThumb[data-state='checked'] {
+  transform: translateX(19px);
+}
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  /* background: rgb(250, 230, 221); */
+  background: transparent;
+  border-radius: 12px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FF6B00;
+  border-radius: 1rem;
+  width: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
